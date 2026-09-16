@@ -1,4 +1,4 @@
-title: The Fights I Want to Choose
+The Fights I Want to Choose
 date: 2026-09-15
 summary: Some goals have a summit. This one only has the next moment in which I get to practice.
 ---
