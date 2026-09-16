@@ -39,7 +39,7 @@ SITE = Site(
     title="Unfinished",
     tagline="Thinking out loud while I am still in the middle of it.",
     author="Ananya Joshi",
-    base_url="https://example.com",
+    base_url="https://ananyajoshi0203-cpu.github.io/unfinished",
 )
 
 
