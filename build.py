@@ -2,6 +2,7 @@
 
 import html
 import math
+import os
 import shutil
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
@@ -39,7 +40,7 @@ SITE = Site(
     title="Unfinished",
     tagline="Thinking out loud while I am still in the middle of it.",
     author="Ananya Joshi",
-    base_url="https://ananyajoshi0203-cpu.github.io/unfinished",
+    base_url=os.environ.get("SITE_BASE_URL", "https://ananyajoshi0203-cpu.github.io/unfinished"),
 )
 
 

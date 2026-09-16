@@ -20,22 +20,19 @@ Standalone pages work the same way in `pages/` and need only a `title`.
 ## Build and preview
 
 ```sh
-uv run --with markdown python build.py
+SITE_BASE_URL=http://localhost:8000 uv run --with markdown python build.py
 python3 -m http.server -d dist 8000
 ```
 
-Then open http://localhost:8000.
-
-## Before publishing
-
-Set `base_url` in `build.py` to the real domain. It is what the Atom feed and share
-previews point at, and on a GitHub Pages project site its path also becomes the site
-root that every link is written against.
+Then open http://localhost:8000. The override matters: the published site lives under
+`/unfinished`, so a build without it writes links a local server cannot resolve.
 
 ## Deploy
 
-`.github/workflows/deploy.yml` builds `dist/` and publishes it to GitHub Pages on every
-push to `main`. Enable it under Settings > Pages > Source > GitHub Actions.
+Every push to `main` rebuilds and republishes
+[the site](https://ananyajoshi0203-cpu.github.io/unfinished/) via
+`.github/workflows/deploy.yml`.
 
-Netlify, Vercel, and Cloudflare Pages all work too: build command
-`uv run --with markdown python build.py`, publish directory `dist`.
+`base_url` in `build.py` is what the Atom feed and link previews point at, and its path
+is the root every link is written against. Change it if the site ever moves to a custom
+domain, where the path is empty.
